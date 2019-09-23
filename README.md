@@ -6,7 +6,7 @@ hyperparameters are based on the paper
 "Unsupervised representation learning with DCGANs" (https://arxiv.org/abs/1511.06434)
 
 ### Generated images sample ###
-![Alt text](images/sample_0.png?raw=true "Title")
+![Alt text](images/gan_sample_0.png?raw=true "Title")
 
 ### Where can I get the dataset? ###
 The dataset is available at http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
