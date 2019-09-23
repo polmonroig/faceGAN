@@ -5,10 +5,15 @@ that tries to create realistic faces of the CelebA datastet. The architecture an
 hyperparameters are based on the paper
 "Unsupervised representation learning with DCGANs" (https://arxiv.org/abs/1511.06434)
 <br>
+<br>
 It includes three different models based on the same architecture:
-    * DCGAN
-    * WGAN
-    * WGAN-GP
+* DCGAN
+* WGAN 
+* WGAN-GP
+<br>
+The second based on the paper "Wasserstein GAN" (https://arxiv.org/abs/1701.07875)
+and the third "Improved Training of Wasserstein GANs" (https://arxiv.org/abs/1704.00028)
+
 ### Generated images sample ###
 Sample image of the DCGAN trained on 10 epochs 
 ![Alt text](images/gan_sample_0.png?raw=true "Title")
