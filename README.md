@@ -21,8 +21,12 @@ Sample image of the WGAN trained on 215000 epochs
 ![Alt text](images/wgan_sample_0.png?raw=true "Title")
 
 
+### Special Notes ###
+This repository is currently in progress, thus the networks are not giving their full potential 
+
 ### Where can I get the dataset? ###
 The dataset is available at http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
+
 ### Who do I talk to? ###
 
 Pol Monroig
