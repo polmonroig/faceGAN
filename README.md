@@ -8,15 +8,18 @@ hyperparameters are based on the paper
 <br>
 It includes three different models based on the same architecture:
 * DCGAN
-* WGAN 
+* WGAN
 * WGAN-GP
 <br>
 The second based on the paper "Wasserstein GAN" (https://arxiv.org/abs/1701.07875)
 and the third "Improved Training of Wasserstein GANs" (https://arxiv.org/abs/1704.00028)
 
 ### Generated images sample ###
-Sample image of the DCGAN trained on 10 epochs 
+Sample image of the DCGAN trained on 10 epochs
 ![Alt text](images/gan_sample_0.png?raw=true "Title")
+Sample image of the WGAN trained on 215000 epochs 
+![Alt text](images/wgan_sample_0.png?raw=true "Title")
+
 
 ### Where can I get the dataset? ###
 The dataset is available at http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html

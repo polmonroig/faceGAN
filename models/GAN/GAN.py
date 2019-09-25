@@ -43,6 +43,9 @@ class Discriminator(nn.Module):
         return self.net(input)
 
 
+
+
+
 class Generator(nn.Module):
     def __init__(self, latent_size, n_channels, imsize):
         super(Generator, self).__init__()
@@ -105,6 +108,8 @@ class GAN():
         self.generator.eval()
 
     def  __call__(self, input):
+        self.discriminator.eval()
+        self.generator.eval()
         return self.generator(input)
 
     def train(self, dataloader, n_epochs):
