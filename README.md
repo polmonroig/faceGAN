@@ -15,10 +15,12 @@ The second based on the paper "Wasserstein GAN" (https://arxiv.org/abs/1701.0787
 and the third "Improved Training of Wasserstein GANs" (https://arxiv.org/abs/1704.00028)
 
 ### Generated images sample ###
-Sample image of the DCGAN trained on 10 epochs
+Sample image of the DCGAN trained on 23 epochs
 ![Alt text](images/gan_sample_0.png?raw=true "Title")
 Sample image of the WGAN trained on 215000 epochs 
 ![Alt text](images/wgan_sample_0.png?raw=true "Title")
+Here I made vector arithmetic with the latent vectors of the generated images to make a neutral man smile
+![Alt text](images/face_vector.png?raw=true "Title")
 
 
 ### Special Notes ###
