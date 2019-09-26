@@ -16,22 +16,22 @@ class Discriminator(nn.Module):
 
         self.net = nn.Sequential(
             # in_filters, out_filters, kernel, stride, padding
-            nn.Conv2d(n_channels,  imsize, 4, 2, 1), # conv1 64x64
-            nn.BatchNorm2d(imsize),
-            nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(imsize, imsize * 2, kernel_size=4, # conv2 I=32x32
-                      stride=2, padding=1),
-            nn.BatchNorm2d(imsize * 2),
-            nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(imsize * 2, imsize * 4, kernel_size=4, # conv3 I=16x16
-                      stride=2, padding=1),
+            nn.Conv2d(n_channels,  imsize * 4, 4, 2, 1), # conv1 64x64
             nn.BatchNorm2d(imsize * 4),
             nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(imsize * 4, imsize * 4, kernel_size=4, # conv4 O=2x2
+            nn.Conv2d(imsize * 4, imsize * 8, kernel_size=4, # conv2 I=32x32
                       stride=2, padding=1),
-            nn.BatchNorm2d(imsize * 4),
+            nn.BatchNorm2d(imsize * 8),
             nn.LeakyReLU(0.2, inplace=True),
-            nn.Conv2d(imsize * 4, imsize * 8, kernel_size=4, # conv5
+            nn.Conv2d(imsize * 8, imsize * 8, kernel_size=4, # conv3 I=16x16
+                      stride=2, padding=1),
+            nn.BatchNorm2d(imsize * 8),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(imsize * 8, imsize * 8, kernel_size=4, # conv4 O=2x2
+                      stride=2, padding=1),
+            nn.BatchNorm2d(imsize * 8),
+            nn.LeakyReLU(0.2, inplace=True),
+            nn.Conv2d(imsize * 8, imsize * 8, kernel_size=4, # conv5
                       stride=2, padding=1),
             nn.BatchNorm2d(imsize * 8),
             nn.LeakyReLU(0.2, inplace=True), # conv6
@@ -55,23 +55,23 @@ class Generator(nn.Module):
                                stride=1, padding=1),
             nn.BatchNorm2d(imsize * 8),
             nn.ReLU(True),
-            nn.ConvTranspose2d(imsize * 8, imsize * 4, kernel_size=4, #conv2
+            nn.ConvTranspose2d(imsize * 8, imsize * 8, kernel_size=4, #conv2
+                               stride=2, padding=1),
+            nn.BatchNorm2d(imsize * 8),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(imsize * 8, imsize * 8, kernel_size=4, #conv3
+                               stride=2, padding=1),
+            nn.BatchNorm2d(imsize * 8),
+            nn.ReLU(True),
+            nn.ConvTranspose2d(imsize * 8, imsize * 4, kernel_size=4, #conv4
                                stride=2, padding=1),
             nn.BatchNorm2d(imsize * 4),
             nn.ReLU(True),
-            nn.ConvTranspose2d(imsize * 4, imsize * 4, kernel_size=4, #conv3
-                               stride=2, padding=1),
-            nn.BatchNorm2d(imsize * 4),
-            nn.ReLU(True),
-            nn.ConvTranspose2d(imsize * 4, imsize * 2, kernel_size=4, #conv4
-                               stride=2, padding=1),
+            nn.ConvTranspose2d(imsize * 4, imsize * 2,kernel_size=4,#conv5
+                               stride=2,padding=1),
             nn.BatchNorm2d(imsize * 2),
             nn.ReLU(True),
-            nn.ConvTranspose2d(imsize * 2, imsize,kernel_size=4,#conv5
-                               stride=2,padding=1),
-            nn.BatchNorm2d(imsize),
-            nn.ReLU(True),
-            nn.ConvTranspose2d(imsize, n_channels, kernel_size=4,#conv6
+            nn.ConvTranspose2d(imsize * 2, n_channels, kernel_size=4,#conv6
                                stride=2, padding=1),
             nn.Tanh()
 
